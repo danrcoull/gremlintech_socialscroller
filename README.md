@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Gremlin Tech Solutions - Social Scroller
 ============================
 
@@ -46,3 +47,6 @@ ________________
 See this working on one of my sites at :
 
 [a link](https://www.fashionthreadsboutique.co.uk)
+=======
+# gremlintech_socialscroller
+>>>>>>> 2e51c5bff329eabc5bb51ee3293690b3a0fbc8e4
