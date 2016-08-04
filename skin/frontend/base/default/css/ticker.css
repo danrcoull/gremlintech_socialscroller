@@ -1,0 +1,50 @@
+.TickerNews{
+    width: 100%;
+    height: 30px;
+    line-height: 40px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background: #2C2C2C;
+    display:block;
+    clear: both;
+
+}
+
+.ti_wrapper{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    height:30px;
+}
+.ti_slide{
+    width: 30000px;
+    position: relative;
+    left: 0;
+    top: 0;
+    height:30px;
+}
+.ti_content{
+    width: 8000px;
+    position: relative;
+    float:left;
+    height:30px;
+}
+
+.ti_news{
+    float:left;
+    color:#fff;
+}
+.ti_news p{
+    display: block;
+    margin-right: 10px;
+    color:#fff;
+    text-decoration: none;
+    font-family: geneva;
+    margin-bottom:0px;
+    font-size:12px;
+}
+
+.ti_news p .fa
+{
+    font-size:14px;
+}

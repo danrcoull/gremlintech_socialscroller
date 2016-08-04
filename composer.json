@@ -1,0 +1,15 @@
+{
+  "name": "gremlintech/socialscroller",
+  "type": "magento-module",
+  "description": "Display All social accounts, in a custom news ticker slider",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Daniel Coull",
+      "email": "ttechitsolutions@gmail.com"
+    }
+  ],
+  "require": {
+    "ecomdev/ecomdev_phpunit": "*"
+  }
+}

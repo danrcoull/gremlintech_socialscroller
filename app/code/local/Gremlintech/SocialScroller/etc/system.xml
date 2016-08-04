@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+<config>
+	  <tabs>
+		<gremlintech translate="label" module="socialscroller">
+            <label>GremlinTech</label>
+            <sort_order>100</sort_order>
+        </gremlintech>
+	  </tabs>
+	  <sections>
+		<socialscroller  translate="label" module="socialscroller">                    
+		<label>Social Scroller</label>
+		<tab>gremlintech</tab>
+		<frontend_type>text</frontend_type>
+		<sort_order>100</sort_order>
+		<show_in_default>1</show_in_default>
+		<show_in_website>1</show_in_website>
+		<show_in_store>1</show_in_store>            
+					<groups>
+				      <facebook translate="label"> 
+					  <label>Facebok</label>
+					  <frontend_type>text</frontend_type>
+					  <sort_order>3</sort_order>
+					  <show_in_default>1</show_in_default>
+					  <show_in_website>1</show_in_website>
+					  <show_in_store>1</show_in_store>
+				       <fields>
+                          <app_id translate="label">
+                            <label>APP Id</label>
+							<frontend_type>text</frontend_type>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                          </app_id>
+                          <app_secret translate="label">
+                            <label>APP Secret</label>
+							<frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                          </app_secret>
+                          <access_token translate="label">
+                            <label>Access Token</label>
+							<frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                          </access_token>
+					   </fields>
+					   </facebook>
+				      <general translate="label"> 
+					  <label>General</label>
+					  <frontend_type>text</frontend_type>
+					  <sort_order>0</sort_order>
+					  <show_in_default>1</show_in_default>
+					  <show_in_website>1</show_in_website>
+					  <show_in_store>1</show_in_store>
+				       <fields>
+                          <enabled translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                          </enabled>
+                          <debug translate="label">
+                            <label>Debug</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                          </debug>
+                          <cache_time translate="label">
+                               <label>Cache Time</label>
+                               <frontend_type>text</frontend_type>
+                               <sort_order>1</sort_order>
+                               <show_in_default>1</show_in_default>
+                               <show_in_website>1</show_in_website>
+                               <show_in_store>1</show_in_store>
+                               <comment>Caching In Hours</comment>
+                          </cache_time>
+					   </fields>
+					   </general>
+				      <google translate="label"> 
+					  <label>Google</label>
+					  <frontend_type>text</frontend_type>
+					  <sort_order>2</sort_order>
+					  <show_in_default>1</show_in_default>
+					  <show_in_website>1</show_in_website>
+					  <show_in_store>1</show_in_store>
+				       <fields>
+                          <api_key translate="label">
+                            <label>API Key</label>
+							<frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>Developr Key</comment>
+                          </api_key>
+                           <page translate="label">
+                               <label>Google+ Page</label>
+                               <frontend_type>text</frontend_type>
+                               <sort_order>2</sort_order>
+                               <show_in_default>1</show_in_default>
+                               <show_in_website>1</show_in_website>
+                               <show_in_store>1</show_in_store>
+                               <comment>Developr Key</comment>
+                           </page>
+					   </fields>
+					   </google>
+				      <twitter translate="label"> 
+					  <label>Twitter</label>
+					  <frontend_type>text</frontend_type>
+					  <sort_order>1</sort_order>
+					  <show_in_default>1</show_in_default>
+					  <show_in_website>1</show_in_website>
+					  <show_in_store>1</show_in_store>
+				       <fields>
+                          <oauth_access_token translate="label">
+                            <label>Oauth Access Token</label>
+							<frontend_type>text</frontend_type>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                          </oauth_access_token>
+                          <oauth_access_token_secret translate="label">
+                            <label>OAuth Access Token Secr</label>
+							<frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                          </oauth_access_token_secret>
+                          <consumer_key translate="label">
+                            <label>Consumer Key</label>
+							<frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                          </consumer_key>
+                          <consumer_secret translate="label">
+                            <label>Consumer Secret</label>
+							<frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                          </consumer_secret>
+                          <twitter_username translate="label">
+                            <label>Username</label>
+							<frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                          </twitter_username>
+                          <show_tweet_links translate="label">
+                            <label>Show Tweet Links</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                          </show_tweet_links>
+                          <tweets_to_show translate="label">
+                            <label>Number of Tweets To Show</label>
+							<frontend_type>text</frontend_type>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                          </tweets_to_show>
+					   </fields>
+					   </twitter>
+					</groups>
+		</socialscroller>
+	  </sections>
+</config>

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Gremlintech_SocialScroller>
+      <version>1.0.0</version>
+    </Gremlintech_SocialScroller>
+  </modules>
+  <global>
+    <blocks>
+      <socialscroller>
+        <class>Gremlintech_SocialScroller_Block</class>
+      </socialscroller>
+    </blocks>
+    <helpers>
+      <socialscroller>
+        <class>Gremlintech_SocialScroller_Helper</class>
+      </socialscroller>
+    </helpers>
+    <models>
+      <socialscroller>
+        <class>Gremlintech_SocialScroller_Model</class>
+      </socialscroller>
+    </models>
+    <cache>
+      <types>
+        <socialscroller module="gremlintech_socialscroller">
+          <label>Social Feed Fetch Cache</label>
+          <description>Cache of social feeds</description>
+          <tags>SocialScroller</tags>
+        </socialscroller>
+      </types>
+    </cache>
+  </global>
+  <frontend>
+    <layout>
+      <updates>
+        <gremlintech_socialscroller>
+          <file>socialscroller.xml</file>
+        </gremlintech_socialscroller>
+      </updates>
+    </layout>
+  </frontend>
+
+</config> 
