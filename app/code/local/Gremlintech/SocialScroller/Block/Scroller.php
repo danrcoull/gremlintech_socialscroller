@@ -41,7 +41,7 @@ class Gremlintech_SocialScroller_Block_Scroller extends Mage_Core_Block_Template
                     //get config lifetime
                     $lifetime = Mage::getStoreConfig('core/cache/lifetime');
                     //save the cache
-                    Mage::app()->saveCache($array, $cacheId, $cacheGroup, $lifetime);
+                    Mage::app()->saveCache($array, $cacheId, array($cacheGroup), $lifetime);
 
                 } catch (Exception $e) {
                     //lets retry to stop any errors
