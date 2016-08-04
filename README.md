@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Gremlin Tech Solutions - Social Scroller
 ============================
 
@@ -16,11 +15,11 @@ Go to System -> Configuration -> GremlinTech -> Social Scroller
 1. Enabled  - is the module enabled if not do nothing
 2. Debug - Not implemented as of version 1.0.0
 
-3. Configure your twitter oauth settings. [a link](http://apps.twitter.com/)
+3. Configure your twitter oauth settings. [Twitter Apps](http://apps.twitter.com/)
 4. Enter the username you wish to get the twitter feed from.
 5. Enter the number of tweets to show.
 
-6. Configure your google app [a link](http://console.developers.google.com/)
+6. Configure your google app [google devloper console](http://console.developers.google.com/)
 7. In the console visit library and search Google+ Api and enable
 8. Create a browser api key in ap and credentials.
 9. Enter the unique url of the page without the +.
@@ -46,7 +45,8 @@ ________________
 
 See this working on one of my sites at :
 
-[a link](https://www.fashionthreadsboutique.co.uk)
-=======
-# gremlintech_socialscroller
->>>>>>> 2e51c5bff329eabc5bb51ee3293690b3a0fbc8e4
+[fashion threads boutique](https://www.fashionthreadsboutique.co.uk)
+
+
+
+
