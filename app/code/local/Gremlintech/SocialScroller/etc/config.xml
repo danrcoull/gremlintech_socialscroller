@@ -23,10 +23,10 @@
     </models>
     <cache>
       <types>
-        <socialscroller module="gremlintech_socialscroller">
+        <socialscroller>
           <label>Social Feed Fetch Cache</label>
           <description>Cache of social feeds</description>
-          <tags>SocialScroller</tags>
+          <tags>SOCIALSCROLLER_FEED</tags>
         </socialscroller>
       </types>
     </cache>

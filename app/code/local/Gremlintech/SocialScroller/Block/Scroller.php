@@ -3,7 +3,21 @@
 class Gremlintech_SocialScroller_Block_Scroller extends Mage_Core_Block_Template
 {
 
+
+    const CACHE_TAG = "SOCIALSCROLLER_FEED";
+
     private $_collection;
+
+    protected function _construct()
+    {
+        $this->setCollection();
+
+        //lets just cache the block for 1 hour aswell.
+        $this->addData(array(
+            'cache_lifetime'    => 3600,
+            'cache_tags'        => array(Mage_Catalog_Model_Product::CACHE_TAG),
+        ));
+    }
 
     /**
      * access point for the collection variable
@@ -11,7 +25,6 @@ class Gremlintech_SocialScroller_Block_Scroller extends Mage_Core_Block_Template
      */
     public function getCollection()
     {
-        $this->setCollection();
         return $this->_collection;
     }
 
@@ -32,7 +45,7 @@ class Gremlintech_SocialScroller_Block_Scroller extends Mage_Core_Block_Template
             //check if cacheid returns anything
             if ($cacheContent = Mage::app()->loadCache($cacheId)) {
                 //add to original array var
-                $array = $cacheContent;
+                $array = unserialize($cacheContent);
             } else {
                 //try to resave new array content
                 try {
@@ -41,7 +54,7 @@ class Gremlintech_SocialScroller_Block_Scroller extends Mage_Core_Block_Template
                     //get config lifetime
                     $lifetime = Mage::getStoreConfig('core/cache/lifetime');
                     //save the cache
-                    Mage::app()->saveCache($array, $cacheId, array($cacheGroup), $lifetime);
+                    Mage::app()->saveCache(serialize($array), $cacheId, array(self::CACHE_TAG), $lifetime);
 
                 } catch (Exception $e) {
                     //lets retry to stop any errors
