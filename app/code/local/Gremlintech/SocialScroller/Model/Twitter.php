@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * Class Gremlintech_SocialScroller_Model_Twitter
+ * @author Daniel Coull <ttechitsolutions@gmail.com>
+ */
+
 class Gremlintech_SocialScroller_Model_Twitter extends Mage_Core_Model_Abstract
 {
 
@@ -38,22 +44,37 @@ class Gremlintech_SocialScroller_Model_Twitter extends Mage_Core_Model_Abstract
     {
         $social = array();
         $tweets = $this->getTweets();
-        if(array_key_exists('errors',$tweets) == false) {
+        if(array_key_exists('errors',$tweets) == false && $tweets != false) {
             foreach ($tweets as $tweet) {
-                //TODO: format tweet structure to match other social networks
-                $text = $this->tweet_html_text($tweet);
+
+                if(Mage::getStoreConfig(self::XML_SHOW_TWEET_LINKS)) {
+                    $text = $this->tweet_html_text($tweet);
+                }else
+                {
+                    $text = $tweet['text'];
+                }
 
                 $newStructure = array(
                     'type' => 'twitter',
                     'post' => $text,
                     'datetime' => $tweet['created_at']
                 );
+
                 array_push($social,$newStructure);
             }
+
+            $message = Mage::helper('socialscroller')->__("* Items Retrieved From twitter:");
+            Mage::helper('socialscroller')->logMessage($message);
+            Mage::helper('socialscroller')->logMessage($tweets);
 
 
             return $social;
         }
+
+        $message = Mage::helper('socialscroller')->__("* There was a problem from twitter response:");
+        $errorIndex = array_search("errors",array_keys($tweets));
+        Mage::helper('socialscroller')->logMessage($message);
+        Mage::helper('socialscroller')->logMessage($tweets[$errorIndex]);
 
         return false;
 
@@ -72,14 +93,20 @@ class Gremlintech_SocialScroller_Model_Twitter extends Mage_Core_Model_Abstract
             if ($count != null && $count > 0) {
                 $getfield .= '&count=' . $count;
             }
-        }
-        $requestMethod = 'GET';
-        $twitter = new Twitter_APIExchange($this->getSettings());
-        $response = $twitter->setGetfield($getfield)
-            ->buildOauth($url, $requestMethod)
-            ->performRequest();
 
-        return json_decode($response,true);
+            $requestMethod = 'GET';
+            $twitter = new Twitter_APIExchange($this->getSettings());
+            $response = $twitter->setGetfield($getfield)
+                ->buildOauth($url, $requestMethod)
+                ->performRequest();
+
+            return json_decode($response, true);
+        }
+
+        $message = Mage::helper('socialscroller')->__("* Please Configure twitter screen name.");
+        Mage::helper('socialscroller')->logMessage($message);
+
+        return false;
     }
 
 

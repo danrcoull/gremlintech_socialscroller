@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Class Gremlintech_SocialScroller_Block_Scroller
+ * @author Daniel Coull <ttechitsolutions@gmail.com>
+ * @extends Mage_Core_Block_template
+ */
 class Gremlintech_SocialScroller_Block_Scroller extends Mage_Core_Block_Template
 {
 
@@ -14,8 +19,8 @@ class Gremlintech_SocialScroller_Block_Scroller extends Mage_Core_Block_Template
 
         //lets just cache the block for 1 hour aswell.
         $this->addData(array(
-            'cache_lifetime'    => 3600,
-            'cache_tags'        => array(Mage_Catalog_Model_Product::CACHE_TAG),
+            'cache_lifetime' => 3600,
+            'cache_tags' => array(Mage_Catalog_Model_Product::CACHE_TAG),
         ));
     }
 
@@ -40,6 +45,10 @@ class Gremlintech_SocialScroller_Block_Scroller extends Mage_Core_Block_Template
         $useCache = Mage::app()->useCache($cacheGroup);
         //if cache is enabled
         if (true === $useCache) {
+
+            $message = Mage::helper('socialscroller')->__("* Social Scroller Cache is Enabled.");
+            Mage::helper('socialscroller')->logMessage($message);
+
             //set custom cache id
             $cacheId = "social_array";
             //check if cacheid returns anything
@@ -49,6 +58,7 @@ class Gremlintech_SocialScroller_Block_Scroller extends Mage_Core_Block_Template
             } else {
                 //try to resave new array content
                 try {
+
                     //get array
                     $array = $this->sortArray();
                     //get config lifetime
@@ -56,12 +66,22 @@ class Gremlintech_SocialScroller_Block_Scroller extends Mage_Core_Block_Template
                     //save the cache
                     Mage::app()->saveCache(serialize($array), $cacheId, array(self::CACHE_TAG), $lifetime);
 
+                    $message = Mage::helper('socialscroller')->__("* Magento Cache has been saved, for social scroller feed..");
+                    Mage::helper('socialscroller')->logMessage($message);
+
                 } catch (Exception $e) {
                     //lets retry to stop any errors
+                    $message = Mage::helper('socialscroller')->__("* There was a problem saving the cache with the following message:.");
+                    Mage::helper('socialscroller')->logMessage($message . $e->getMessage());
+
                     $this->setCollection();
                 }
             }
         } else {
+
+            $message = Mage::helper('socialscroller')->__("* Social Scroller Cache is not Enabled. We advise enabling it.");
+            Mage::helper('socialscroller')->logMessage($message);
+
             //we are not cached so just run the original
             $array = $this->sortArray();
         }

@@ -14,28 +14,6 @@ class Gremlintech_SocialScroller_Model_Google extends Mage_Core_Model_Abstract
     }
 
 
-    public function formatPostsArray()
-    {
-        $social = array();
-        //request page feed items
-        $posts = $this->getPageFeed();
-        if($posts != false) {
-            foreach ($posts as $post) {
-                //create a new structure to match twitter and facebook
-               $newStructure = array(
-                    'type' => 'google-plus',
-                    'post' => str_replace("<br />", "", $post->getObject()->getContent()),
-                    'datetime' => $post->getPublished()
-                );
-                //push the new item to the array
-                array_push($social,$newStructure);
-            }
-            return $social;
-        }
-
-        //returm false if no posts are returned.
-        return false;
-    }
 
     public function getPageFeed()
     {
@@ -60,18 +38,55 @@ class Gremlintech_SocialScroller_Model_Google extends Mage_Core_Model_Abstract
                 //collect items and return
                 $items = $activities->getItems();
 
+                $message = Mage::helper('socialscroller')->__("* Items Retrieved From google:");
+                Mage::helper('socialscroller')->logMessage($message);
+                Mage::helper('socialscroller')->logMessage($items);
+
                 return $items;
 
             }catch (Exception $e)
             {
-                //TODO:: add debug logic to give error
 
+                $message = Mage::helper('socialscroller')->__("* Problem With retrieving feed from google :");
+                Mage::helper('socialscroller')->logMessage($message.$e->getMessage());
                 //return false if any errors
                 return false;
             }
         }
 
-        //TODO:: add debug logic to notify admin to configure first
+        $message = Mage::helper('socialscroller')->__("* Please Configure google api Key amd user page.");
+        Mage::helper('socialscroller')->logMessage($message);
+
+        return false;
+    }
+
+    public function formatPostsArray()
+    {
+        $social = array();
+        //request page feed items
+        $posts = $this->getPageFeed();
+        if($posts != false) {
+            if(count($posts) > 1) {
+                foreach ($posts as $post) {
+                    //create a new structure to match twitter and facebook
+                    $newStructure = array(
+                        'type' => 'google-plus',
+                        'post' => str_replace("<br />", "", $post->getObject()->getContent()),
+                        'datetime' => $post->getPublished()
+                    );
+                    //push the new item to the array
+                    array_push($social, $newStructure);
+                }
+                return $social;
+            }
+
+            $message = Mage::helper('socialscroller')->__("* Google+ Returned No Posts.");
+            Mage::helper('socialscroller')->logMessage($message);
+
+            return false;
+        }
+
+        //returm false if no posts are returned.
         return false;
     }
 
