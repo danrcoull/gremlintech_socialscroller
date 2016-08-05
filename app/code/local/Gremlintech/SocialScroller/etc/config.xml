@@ -30,6 +30,16 @@
                 </socialscroller>
             </types>
         </cache>
+        <events>
+            <resource_get_tablename>
+                <observers>
+                    <socialscroller>
+                        <class>socialscroller/observer</class>
+                        <method>addAutoloader</method>
+                    </socialscroller>
+                </observers>
+            </resource_get_tablename>
+        </events>
     </global>
     <frontend>
         <layout>

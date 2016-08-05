@@ -103,8 +103,10 @@ class Gremlintech_SocialScroller_Block_Scroller extends Mage_Core_Block_Template
         $tweets = Mage::getModel('socialscroller/twitter')->formatTweetsArray();
         //get the google+ feed array formated for merge
         $feed = Mage::getModel('socialscroller/google')->formatPostsArray();
+        //get facebook feed
+        $facebook = Mage::getModel('socialscroller/facebook')->formatFacebookArray();
 
-        return array_merge($tweets, $feed);
+        return array_merge($tweets, $feed, $facebook);
     }
 
 
@@ -127,6 +129,6 @@ class Gremlintech_SocialScroller_Block_Scroller extends Mage_Core_Block_Template
      */
     public function date_compare($a, $b)
     {
-        return strtotime($a['datetime']) < strtotime($b['datetime']) ? 1 : -1;
+        return strtotime($a['datetime']) - strtotime($b['datetime']);
     }
 }

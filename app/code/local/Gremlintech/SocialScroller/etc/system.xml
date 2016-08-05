@@ -41,13 +41,29 @@
                             <show_in_store>1</show_in_store>
                           </app_secret>
                           <access_token translate="label">
-                            <label>Access Token</label>
+                            <label>Long Live Access Token</label>
 							<frontend_type>text</frontend_type>
                             <sort_order>3</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                           </access_token>
+                           <facebook_page translate="label">
+                               <label>Facebook Page id or Name</label>
+                               <frontend_type>text</frontend_type>
+                               <sort_order>3</sort_order>
+                               <show_in_default>1</show_in_default>
+                               <show_in_website>1</show_in_website>
+                               <show_in_store>1</show_in_store>
+                           </facebook_page>
+                           <facebook_page_limit translate="label">
+                               <label>Number of Posts to show</label>
+                               <frontend_type>text</frontend_type>
+                               <sort_order>3</sort_order>
+                               <show_in_default>1</show_in_default>
+                               <show_in_website>1</show_in_website>
+                               <show_in_store>1</show_in_store>
+                           </facebook_page_limit>
 					   </fields>
 					   </facebook>
 				      <general translate="label"> 

@@ -24,7 +24,7 @@ Go to System -> Configuration -> GremlinTech -> Social Scroller
 8. Create a browser api key in ap and credentials.
 9. Enter the unique url of the page without the +.
 
-10. Facebook not enabled as of version 1.0.0
+10. Facebook create an app, and enter api information see link in helpful links
 11. Wordpress not enabled as of version 1.0.0
 
 12. Open the Layout.xml and modify the location of the block.
@@ -40,13 +40,19 @@ If not enabled you are likly to get blocked due to the number of queries that wi
 When enabled the feed will refresh in accordance with the cache settings in your magento admin.
 
 
-DEMO
-________________
+Demo
+----------------
 
 See this working on one of my sites at :
 
 [fashion threads boutique](https://www.fashionthreadsboutique.co.uk)
 
+helpful Setup
+----------------
+
+if you need some help with setting up facebook apps 2016 see below link.
+
+[Setup Facebook app 2015/2016](https://www.rocketmarketinginc.com/blog/get-never-expiring-facebook-page-access-token/)
 
 
 
