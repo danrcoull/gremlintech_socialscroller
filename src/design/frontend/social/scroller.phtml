@@ -1,0 +1,29 @@
+<?php $collection = $this->getCollection();
+if(count($collection) > 1) : ?>
+
+    <div class="socialscroller TickerNews default_theme" id="T2">
+        <div class="ti_wrapper">
+            <div class="ti_slide">
+                <div class="ti_content">
+                    <?php
+                    foreach($collection as $post) : ?>
+
+                        <div class="ti_news">
+                            <p><i class="fa fa-<?php echo $post['type']; ?>
+                            <?php echo $post['type']; ?>" aria-hidden="true"></i>
+                                <span><?php echo date("m/d/Y h:i:s",strtotime($post['datetime'])); ?></span>
+                                <?php echo $post['post']; ?> </p>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<?php endif; ?>
+
+<script>
+    jQuery(function(){
+        jQuery(".TickerNews").newsTicker();
+    });
+</script>

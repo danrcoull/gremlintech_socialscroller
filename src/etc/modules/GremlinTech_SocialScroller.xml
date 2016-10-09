@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <GremlinTech_SocialScroller>
+            <active>true</active>
+            <codePool>community</codePool>
+            <version>3.0.0</version>
+        </GremlinTech_SocialScroller>
+    </modules>
+</config>

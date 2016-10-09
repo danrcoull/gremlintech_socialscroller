@@ -1,0 +1,42 @@
+{
+    "name": "gremlintech/socialscroller2",
+    "description": "A social news ticker of social networks",
+    "type": "magento-module",
+    "license": "BSD",
+    "authors": [
+        {
+            "name": "Daniel Coull",
+            "email": "ttechitsolutions@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require" : {
+        "magento-hackathon/magento-composer-installer": "*",
+        "facebook/graph-sdk": "^5.3",
+        "google/apiclient": "^2.0",
+        "j7mbo/twitter-api-php": "^1.0",
+        "tedivm/stash" : "*",
+        "monolog/monolog": "^1.21",
+        "phpunit/phpunit": "*",
+        "behat/behat": "~3.1",
+        "behat/mink-extension": "*",
+        "behat/mink-goutte-driver": "*",
+        "behat/mink-selenium2-driver": "*",
+        "symfony/dependency-injection": "*",
+        "symfony/config": "*",
+        "shanethehat/pretty-xml": "*"
+    },
+    "require-dev": {
+        "phpspec/phpspec":"*",
+        "bossa/phpspec2-expect" : "*",
+    },
+    "config": {
+        "bin-dir": "bin/"
+    },
+    "autoload": {
+        "psr-0": {
+            "": "src"
+        }
+    }
+
+}

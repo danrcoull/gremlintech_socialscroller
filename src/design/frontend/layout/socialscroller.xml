@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<layout version="3.0.0">
+    <default>
+        <reference name="head">
+            <action method="addJs" ifconfig="socialscroller/frontend/include_jquery">
+                <script>gremlintech/social/jquery.js</script>
+            </action>
+            <action method="addJs">
+                <script>gremlintech/social/jquery.tickerNews.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/ticker.css</name>
+                <params/><if/>
+            </action>
+        </reference>
+        <reference name="header">
+            <block type="gremlintech_socialscroller/social_scroller" name="social_scroller"
+                   template="gremlintech/social/scroller.phtml" />
+        </reference>
+    </default>
+</layout>

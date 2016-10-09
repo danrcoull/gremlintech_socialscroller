@@ -1,0 +1,10 @@
+src/lib/Facebook 								lib/Facebook
+src/lib/Google									lib/Google
+src/lib/Monolog									lib/Monolog
+src/lib/Twitter									lib/Twitter
+src/GremlinTech/SocialScroller					app/code/community/GremlinTech/SocialScroller
+src/etc/modules/GremlinTech_SocialScroller.xml 	app/etc/modules/GremlinTech_SocialScroller.xml
+src/design/frontend/layout/socialscroller.xml 	app/design/frontend/base/default/layout/gremlintech/socialscroller.xml
+src/design/frontend/social 						app/design/frontend/base/default/template/gremlintech/social
+src/skin/frontend/js 							js/gremlintech/social
+src/skin/frontend/css 							skin/frontend/base/default/css/gremlintech/social

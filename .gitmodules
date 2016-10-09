@@ -1,0 +1,12 @@
+[submodule "src/lib/Twitter"]
+	path = src/lib/Twitter
+	url = https://github.com/J7mbo/twitter-api-php.git
+[submodule "src/lib/Google"]
+	path = src/lib/Google
+	url = https://github.com/google/google-api-php-client.git
+[submodule "src/lib/Facebook"]
+	path = src/lib/Facebook
+	url = https://github.com/facebook/php-graph-sdk.git
+[submodule "src/lib/Monolog"]
+	path = src/lib/Monolog
+	url = https://github.com/Seldaek/monolog.git
