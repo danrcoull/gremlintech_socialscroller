@@ -24,6 +24,17 @@ if(count($collection) > 1) : ?>
 
 <script>
     jQuery(function(){
-        jQuery(".TickerNews").newsTicker();
+
+        _Ticker = jQuery(".TickerNews").newsTicker();
+        jQuery(".TickerNews").hover(
+
+            function () {
+                _Ticker.newsTickerPause();
+            },
+
+            function () {
+                _Ticker.newsTickerResume();
+            }
+        );
     });
 </script>
