@@ -1,11 +1,9 @@
 Gremlin Tech Solutions - Social Scroller
 ============================
 
-Allow a frontend customer attribute for a customer to add their linkedin profile url, in which is limited to
-250 chars and validated as a url using the Validation.js classes.
-
-The sql setup creates the attribute to make the attribute available on all customer forms. And the field block
-is used to load the field to the frontend additional instad of taking control of the register persistant form.
+Magento 1.9.x Social Scroller, intergrate Facebook, Twitter, Google SDk Libraries to allow pulling down a feed of
+each of the relivant pages into a simple news ticker  to allow customers to see all your latest social media activity
+ in one location, but keeping all the relivant links in tact.
 
 Install
 ----------------
