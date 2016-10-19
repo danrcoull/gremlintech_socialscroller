@@ -15,7 +15,7 @@
                 <params/><if/>
             </action>
         </reference>
-        <reference name="header">
+        <reference name="top.container">
             <block type="gremlintech_socialscroller/social_scroller" name="social_scroller"
                    template="gremlintech/social/scroller.phtml" />
         </reference>
