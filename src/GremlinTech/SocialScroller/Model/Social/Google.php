@@ -16,12 +16,16 @@ class GremlinTech_SocialScroller_Model_Social_Google extends Mage_Core_Model_Abs
 
     public function _construct()
     {
-        $config = Mage::getSingleton('gremlintech_socialscroller/config_store');
-        $this->_cache = Mage::getModel('gremlintech_socialscroller/cache');
-        $this->setLibConfig($config)
-            ->setClient()
-            ->setLimits()
-            ->setFeed();
+        if($this->_config->getEnabled()) {
+            $config = Mage::getSingleton('gremlintech_socialscroller/config_store');
+            $this->_cache = Mage::getModel('gremlintech_socialscroller/cache');
+            $this->setLibConfig($config)
+                ->setClient()
+                ->setLimits()
+                ->setFeed();
+        }
+
+        return $this;
     }
 
     public function setLibConfig(GremlinTech_SocialScroller_Model_Config_Store $config)
@@ -89,7 +93,7 @@ class GremlinTech_SocialScroller_Model_Social_Google extends Mage_Core_Model_Abs
             }
         }
 
-        $feed = $this->_cache->getCache($feed, 'facebook');
+        $feed = $this->_cache->getCache($feed, 'google');
 
         $this->_feed = $feed;
         return $this;

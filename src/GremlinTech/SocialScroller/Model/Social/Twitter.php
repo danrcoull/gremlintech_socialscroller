@@ -16,17 +16,21 @@ class GremlinTech_SocialScroller_Model_Social_Twitter extends Mage_Core_Model_Ab
 
     public function _construct()
     {
-        $config = Mage::getSingleton('gremlintech_socialscroller/config_store');
-        $this->_cache = Mage::getModel('gremlintech_socialscroller/cache');
+        if ($this->_config->getEnabled()) {
+            $config = Mage::getSingleton('gremlintech_socialscroller/config_store');
+            $this->_cache = Mage::getModel('gremlintech_socialscroller/cache');
 
-        $this->setLibConfig($config)
-            ->setClient()
-            ->setLimits()
-            ->setFeed();
+            $this->setLibConfig($config)
+                ->setClient()
+                ->setLimits()
+                ->setFeed();
+        }
+        return $this;
     }
 
     public function setLibConfig(GremlinTech_SocialScroller_Model_Config_Store $config)
     {
+
         $this->_config = $config->getTwitterConfig();
         $this->_helper = Mage::helper('gremlintech_socialscroller');
 
@@ -85,7 +89,7 @@ class GremlinTech_SocialScroller_Model_Social_Twitter extends Mage_Core_Model_Ab
 
         }
 
-        $feed = $this->_cache->getCache($feed, 'facebook');
+        $feed = $this->_cache->getCache($feed, 'twitter');
         $this->_feed = $feed;
         return $this;
     }

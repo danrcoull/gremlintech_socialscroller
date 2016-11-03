@@ -26,13 +26,17 @@ class GremlinTech_SocialScroller_Model_Social_Facebook extends Mage_Core_Model_A
 
     public function __construct()
     {
-        $config = Mage::getSingleton('gremlintech_socialscroller/config_store');
-        $this->_cache = Mage::getModel('gremlintech_socialscroller/cache');
+        if($this->_config->getEnabled()) {
+            $config = Mage::getSingleton('gremlintech_socialscroller/config_store');
+            $this->_cache = Mage::getModel('gremlintech_socialscroller/cache');
 
-        $this->setLibConfig($config)
-             ->setClient()
-             ->setLimits()
-             ->setFeed();
+            $this->setLibConfig($config)
+                ->setClient()
+                ->setLimits()
+                ->setFeed();
+        }
+
+        return $this;
     }
 
     /**
