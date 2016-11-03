@@ -19,8 +19,9 @@ class GremlinTech_SocialScroller_Model_Social_Twitter extends Mage_Core_Model_Ab
 
             $config = Mage::getSingleton('gremlintech_socialscroller/config_store');
             $this->_cache = Mage::getModel('gremlintech_socialscroller/cache');
+        $this->setLibConfig($config);
         if ($this->_config->getEnabled()) {
-            $this->setLibConfig($config)
+            $this
                 ->setClient()
                 ->setLimits()
                 ->setFeed();

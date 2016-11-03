@@ -29,8 +29,9 @@ class GremlinTech_SocialScroller_Model_Social_Facebook extends Mage_Core_Model_A
 
             $config = Mage::getSingleton('gremlintech_socialscroller/config_store');
             $this->_cache = Mage::getModel('gremlintech_socialscroller/cache');
-        if($this->_config->getEnabled()) {
-            $this->setLibConfig($config)
+        $this->setLibConfig($config);
+        if ($this->_config->getEnabled()) {
+            $this
                 ->setClient()
                 ->setLimits()
                 ->setFeed();
