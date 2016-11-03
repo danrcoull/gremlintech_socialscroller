@@ -22,9 +22,12 @@ class GremlinTech_SocialScroller_Block_Social_Scroller extends  Mage_Core_Block_
      */
     public function setCollection()
     {
-        $facebook = Mage::getModel("gremlintech_socialscroller/social_facebook")->getFeed();
-        $google = Mage::getModel("gremlintech_socialscroller/social_google")->getFeed();
-        $twitter= Mage::getModel("gremlintech_socialscroller/social_twitter")->getFeed();
+        $facebookFeed = Mage::getModel("gremlintech_socialscroller/social_facebook")->getFeed();
+        $facebook = is_array($facebookFeed ) ? $facebookFeed  : array() ;
+        $googleFeed = Mage::getModel("gremlintech_socialscroller/social_google")->getFeed();
+        $google =  is_array($googleFeed) ? $googleFeed : array();
+        $twitterFeed = Mage::getModel("gremlintech_socialscroller/social_twitter")->getFeed();
+        $twitter= is_array($twitterFeed) ? $twitterFeed : array();
 
         $this->_collection = array_merge($facebook, $google, $twitter);
 
